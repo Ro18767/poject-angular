@@ -4,7 +4,7 @@
 
 [Задание Проэкта](./ROADMAP.md) 
 
-[Задание Проэкта в .pdf файлке](./angular-final-task.pdf)
+[Задание Проэкта в .pdf файлике (оригинал)](./angular-final-task.pdf)
 
 ## Development server
 
