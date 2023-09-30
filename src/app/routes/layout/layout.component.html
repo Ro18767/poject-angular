@@ -1,0 +1,31 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a [routerLink]="['']" class="brand-logo left">Logo</a>
+      <ul id="nav-mobile" class="right">
+        <li>
+          <a [routerLink]="['/cart']"
+            ><i class="material-icons">shopping_cart</i></a
+          >
+        </li>
+        <li>
+          <a [routerLink]="['/admin']"
+            ><i class="material-icons">admin_panel_settings</i></a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<p>layout works!</p>
+<a [routerLink]="['/product', 1]">product</a>
+<i class="material-icons"> add_shopping_cart </i>
+<i class="material-icons"> shopping_cart_checkout </i>
+<i class="material-icons"> arrow_back </i>
+<i class="material-icons"> add </i>
+<i class="material-icons"> remove </i>
+<i class="material-icons"> edit </i>
+<i class="material-icons"> image </i>
+
+<router-outlet></router-outlet>
