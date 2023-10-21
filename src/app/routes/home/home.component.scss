@@ -4,3 +4,14 @@
     object-fit: contain;
     object-position: center;
 }
+
+.card .card-content a {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    height: 4.5em; // 1.5 * 3em
+}
+

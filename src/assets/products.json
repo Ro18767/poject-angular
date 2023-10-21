@@ -1,17 +1,20 @@
 [
     {
+        "id": 0,
         "title": "Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)",
         "description": "Екран (6.1\", OLED (Super Retina XDR), 2556x1179) / Apple A16 Bionic / подвійна основна камера: 48 Мп + 12 Мп, фронтальна камера: 12 Мп / 128 ГБ вбудованої пам'яті / 3G / LTE / 5G / GPS / Nano-SIM / iOS 17",
         "image_url": "https://content.rozetka.com.ua/goods/images/big/364623740.jpg",
         "price": 45499
     },
     {
+        "id": 1,
         "title": "Ноутбук ASUS TUF Gaming F15 FX506HE-HN012 (90NR0704-M00CW0) Graphite Black / 15.6\" IPS Full HD 144 Гц / Intel Core i5-11400H / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce RTX 3050 Ti",
         "description": "Екран 15.6\" IPS (1920x1080) Full HD 144 Гц, матовий / Intel Core i5-11400H (2.7 - 4.5 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce RTX 3050 Ti, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.3 кг / чорний",
         "image_url": "https://content2.rozetka.com.ua/goods/images/big/283529272.jpg",
         "price": 35999
     },
     {
+        "id": 2,
         "title": "УМБ Xiaomi Redmi PowerBank 20000mAh Fast Charge 18W PB200LZM Black (VXN4304GL)",
         "description": "Індикація: З індикатором рівня заряду / Максимальна вихідна потужність Вт: 18",
         "image_url": "https://content.rozetka.com.ua/goods/images/big/299062684.jpg",

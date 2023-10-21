@@ -1,12 +1,9 @@
 <div class="row">
-  <div class="col s6 m3">
+  <div class="col s6 m3" *ngFor="let produt of produts() | keyvalue">
     <div class="card">
       <div class="card-image">
-        <a [routerLink]="['/product', 1]">
-          <img
-            class=""
-            src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg"
-          />
+        <a [routerLink]="['/product', produt.key]">
+          <img class="" [src]="produt.value.image_url" />
         </a>
         <a
           class="btn-floating btn-large waves-effect waves-light halfway-fab red"
@@ -14,102 +11,12 @@
         >
       </div>
       <div class="card-content">
-        <a [routerLink]="['/product', 1]">
-          Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)
-        </a>
-        <h6 class="">45499</h6>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s6 m3">
-    <div class="card">
-      <div class="card-image">
-        <a [routerLink]="['/product', 1]">
-          <img
-            class=""
-            src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg"
-          />
-        </a>
-        <a
-          class="btn-floating btn-large waves-effect waves-light halfway-fab red"
-          ><i class="material-icons">add</i></a
-        >
-      </div>
-      <div class="card-content">
-        <a [routerLink]="['/product', 1]">
-          Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)
-        </a>
-        <h6 class="">45499</h6>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s6 m3">
-    <div class="card">
-      <div class="card-image">
-        <a [routerLink]="['/product', 1]">
-          <img
-            class=""
-            src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg"
-          />
-        </a>
-        <a
-          class="btn-floating btn-large waves-effect waves-light halfway-fab red"
-          ><i class="material-icons">add</i></a
-        >
-      </div>
-      <div class="card-content">
-        <a [routerLink]="['/product', 1]">
-          Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)
-        </a>
-        <h6 class="">45499</h6>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s6 m3">
-    <div class="card">
-      <div class="card-image">
-        <a [routerLink]="['/product', 1]">
-          <img
-            class=""
-            src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg"
-          />
-        </a>
-        <a
-          class="btn-floating btn-large waves-effect waves-light halfway-fab red"
-          ><i class="material-icons">add</i></a
-        >
-      </div>
-      <div class="card-content">
-        <a [routerLink]="['/product', 1]">
-          Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)
-        </a>
-        <h6 class="">45499</h6>
-      </div>
-    </div>
-  </div>
-
-  <div class="col s6 m3">
-    <div class="card">
-      <div class="card-image">
-        <a [routerLink]="['/product', 1]">
-          <img
-            class=""
-            src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg"
-          />
-        </a>
-        <a
-          class="btn-floating btn-large waves-effect waves-light halfway-fab red"
-          ><i class="material-icons">add</i></a
-        >
-      </div>
-      <div class="card-content">
-        <a [routerLink]="['/product', 1]">
-          Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)
-        </a>
-        <h6 class="">45499</h6>
+          <a [routerLink]="['/product', produt.key]">
+            {{ produt.value.title }}
+          </a>
+          <h6 class="">
+            {{ (produt.value.price) | currency : "UAH" : "symbol-narrow" }}
+          </h6>
       </div>
     </div>
   </div>
