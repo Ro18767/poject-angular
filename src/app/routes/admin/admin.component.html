@@ -1,1 +1,65 @@
-<p>admin works!</p>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Додавання товару</span>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <input
+          id="title"
+          name="title"
+          value=""
+          type="text"
+          class="validate"
+          required
+        />
+        <label for="title">Назва</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <input
+          id="price"
+          name="price"
+          value=""
+          type="number"
+          step="1"
+          min="1"
+          class="validate"
+          required
+        />
+        <label for="price">Ціна</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <textarea
+          id="description"
+          name="description"
+          class="validate materialize-textarea"
+          required
+        ></textarea>
+        <label for="description">Опис</label>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <input
+          ngModel
+          #image_url
+          id="image_url"
+          name="image_url"
+          value=""
+          type="text"
+          (input)="handle_image_url_input($event)"
+          (change)="handle_image_url_change($event)"
+          required
+        />
+        <label for="image_url">Посилання на зображення</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-action right-align">
+    <button type="button" class="btn">This is a button</button>
+  </div>
+</div>
