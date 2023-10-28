@@ -41,6 +41,5 @@ export class AdminComponent {
     } catch {
       image_url.classList.add('invalid');
     }
-    console.log(image_url.classList.toString());
   }
 }
