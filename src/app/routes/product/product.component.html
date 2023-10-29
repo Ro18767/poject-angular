@@ -1,74 +1,78 @@
-<div class="product ">
-    <div class="categories">
-        <a href="#!" >First</a> >
-        <a href="#!" >Second</a> >
-        <a href="#!" >Third</a>
+<nav class="transparent black-text z-depth-0">
+  <div class="nav-wrapper">
+    <div class="col s12">
+      <a [routerLink]="['']" class="breadcrumb">
+        <i class="material-icons">home</i>
+      </a>
+      <a [routerLink]="['/product', id]" class="breadcrumb">
+        {{ "Product ID: " + id }}
+      </a>
     </div>
-    <div class="row product-row">
-        <img class="product-image col "
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrZzfKnF6ukhmv57_43XqBtfQTvwMBJo4pbh5wEGzofw&s" />
+  </div>
+</nav>
+<div class="product">
+  <div class="row product-row">
+    <img class="product-image col" [src]="product.image_url" />
 
-        <div class="product-section col ">
-            <div>
-                <h3>Cat</h3>
-                <h6>★★★★★</h6>
-            </div>
-            <div>
+    <div class="product-section col">
+      <div>
+        <h3>{{ product.title }}</h3>
+      </div>
+      <div>
+        <h4>{{ product.price | currency : "UAH" : "symbol-narrow" }}</h4>
+        <a class="product-buy waves-effect waves-light btn-large">
+          Купить
+          <i class="material-icons"> add_shopping_cart </i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    style="
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5em;
+    "
+  >
+    <div class="product-specification">
+      <h3>Опис</h3>
+      <span> {{ product.description }} </span>
+    </div>
+  </div>
 
-                <h4>550</h4>
-                <a class="product-buy waves-effect waves-light btn-large">
-                    Купить
-                    <i class="material-icons"> add_shopping_cart </i>
-                </a>
-            </div>
-        </div>
+  <!-- <div class="product-characteristic">
+    <h3>Lorem</h3>
+    <div class="collection" style="width: 80%">
+      <div class="collection-item"><span class="badge">1</span>Alan</div>
+      <div class="collection-item"><span class="badge">1</span>Alan</div>
+      <div class="collection-item"><span class="badge">1</span>Alan</div>
+      <div class="collection-item"><span class="badge">1</span>Alan</div>
+      <div class="collection-item"><span class="badge">1</span>Alan</div>
     </div>
-    <div style="width: 100%;display: flex;justify-content: center;  margin-bottom:5em;">
-        <div class="product-specification">
-            <h3>Lorem</h3>
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Libero non ipsam quaerat odit rerum tenetur pariatur porro soluta! 
-                Id esse pariatur velit culpa recusandae reprehenderit neque perferendis nemo vero tempora!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Libero non ipsam quaerat odit rerum tenetur pariatur porro soluta! 
-                Id esse pariatur velit culpa recusandae reprehenderit neque perferendis nemo vero tempora!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Libero non ipsam quaerat odit rerum tenetur pariatur porro soluta! 
-                Id esse pariatur velit culpa recusandae reprehenderit neque perferendis nemo vero tempora!Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Libero non ipsam quaerat odit rerum tenetur pariatur porro soluta! 
-                Id esse pariatur velit culpa recusandae reprehenderit neque perferendis nemo vero tempora!
-            </span>
-        </div>
-    </div>
-    
-    <div class="product-characteristic">
-        <h3>Lorem</h3>
-        <div class="collection "style="width:80%;">
-            <div class="collection-item"><span class="badge">1</span>Alan</div>
-            <div class="collection-item"><span class="badge">1</span>Alan</div>
-            <div class="collection-item"><span class="badge">1</span>Alan</div>
-            <div class="collection-item"><span class="badge">1</span>Alan</div>
-            <div class="collection-item"><span class="badge">1</span>Alan</div>
-          </div>
-    </div>
-    <div class="review-form">
-        <h3>Оставить отзыв о товаре</h3>
-        <form>
-            <div class="form-group">
-                <label for="name">Ваше имя:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Ваш Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="review">Ваш отзыв:</label>
-                <textarea id="review" name="review" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn waves-effect waves-light btn-large">Отправить отзыв
-                <i class="material-icons"> arrow_upward </i>
-            </button>
-        </form>
-    </div>
+  </div>
+  <div class="review-form">
+    <h3>Оставить отзыв о товаре</h3>
+    <form>
+      <div class="form-group">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Ваш Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="review">Ваш отзыв:</label>
+        <textarea id="review" name="review" required></textarea>
+      </div>
+      <button
+        type="submit"
+        class="submit-btn waves-effect waves-light btn-large"
+      >
+        Отправить отзыв
+        <i class="material-icons"> arrow_upward </i>
+      </button>
+    </form>
+  </div> -->
 </div>
