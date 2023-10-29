@@ -46,8 +46,11 @@ export class ProdctsService {
     }[]
   ) {
     try {
+      let lastId = 0;
+
       this.state.set(
         json.reduce((map, { id, title, description, image_url, price }, i) => {
+          if (+id > lastId) lastId = +id;
           return map.set(+id, {
             title,
             description,
@@ -56,6 +59,7 @@ export class ProdctsService {
           });
         }, new Map())
       );
+      this.lastId.set(lastId);
     } catch (reason) {
       console.log('catch', reason);
       this.state.set(new Map());
@@ -83,8 +87,19 @@ export class ProdctsService {
 
   insert(product: Product) {
     this.state.mutate((value) => {
-      if (value) value.set(this.lastId(), product);
+      if (!value) return;
       this.lastId.update((value) => value + 1);
+      value.set(this.lastId(), product);
+    });
+    return this.lastId();
+  }
+  get(product_id: number) {
+    return this.state().get(product_id) ?? null;
+  }
+
+  delete(product_id: number) {
+    this.state.mutate((value) => {
+      value.delete(product_id);
     });
   }
 }

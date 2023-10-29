@@ -1,0 +1,17 @@
+.styled-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    height: 4.5em; // 1.5 * 3em
+}
+
+.styled-img {
+    width: 4.5em;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    
+}
+

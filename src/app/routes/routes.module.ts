@@ -6,7 +6,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { Error404Component } from './error404/error404.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { AdminComponent } from './admin/admin.component';
+import { FormsModule } from '@angular/forms';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,8 @@ import { AdminComponent } from './admin/admin.component';
     CartComponent,
     ProductComponent,
     Error404Component,
-    AdminComponent,
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, FormsModule, AdminModule],
   exports: [
     LayoutComponent,
     HomeComponent,

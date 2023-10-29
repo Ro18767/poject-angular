@@ -6,9 +6,8 @@ import { ProdctsService, Product } from 'src/app/sevice/prodcts.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  produts: Signal<Map<number, Product> | null>;
+  produts: Map<number, Product> | null;
   constructor(private prodctsService: ProdctsService) {
-    console.log(this.prodctsService);
-    this.produts = this.prodctsService.signal();
+    this.produts = this.prodctsService.select();
   }
 }

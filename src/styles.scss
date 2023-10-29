@@ -2,3 +2,16 @@
 nav .brand-logo.left {
     left: 0.5rem;
 }
+
+.breadcrumb {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.breadcrumb:last-child {
+    color: #000;
+}
+
+.breadcrumb:before {
+    color: rgba(0, 0, 0, 0.7);
+}

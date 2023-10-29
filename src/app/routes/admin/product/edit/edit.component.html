@@ -1,0 +1,97 @@
+<nav class="transparent black-text z-depth-0">
+  <div class="nav-wrapper">
+    <div class="col s12">
+      <a [routerLink]="['']" class="breadcrumb">
+        <i class="material-icons">home</i>
+      </a>
+      <a [routerLink]="['/admin']" class="breadcrumb">Admin</a>
+      <a [routerLink]="['/admin/product']" class="breadcrumb">Products</a>
+      <a [routerLink]="['/admin/product', id ?? 'add']" class="breadcrumb">{{
+        id == null ? "New" : "ID: " + id
+      }}</a>
+    </div>
+  </div>
+</nav>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title"
+      >{{ id == null ? "Додавання товару" : "Редагування  товару" }}
+    </span>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <input
+          #title_input
+          [(ngModel)]="title"
+          id="title"
+          name="title"
+          type="text"
+          (input)="handle_input($event)"
+        />
+        <label for="title" class="active">Назва</label>
+        <span
+          class="helper-text"
+          [attr.data-error]="title_error_message"
+        ></span>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <input
+          #price_input
+          [(ngModel)]="price"
+          id="price"
+          name="price"
+          type="number"
+          step="1"
+          min="1"
+        />
+        <label for="price" class="active">Ціна</label>
+        <span
+          class="helper-text"
+          [attr.data-error]="price_error_message"
+        ></span>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <textarea
+          #description_input
+          [(ngModel)]="description"
+          id="description"
+          name="description"
+          class="materialize-textarea"
+          (input)="handle_input($event)"
+        ></textarea>
+        <label for="description" class="active">Опис</label>
+        <span
+          class="helper-text"
+          [attr.data-error]="description_error_message"
+        ></span>
+      </div>
+
+      <div class="input-field col s12">
+        <i class="material-icons prefix">shopping_cart</i>
+        <input
+          #image_url_input
+          [(ngModel)]="image_url"
+          id="image_url"
+          name="image_url"
+          type="url"
+          (input)="handle_input($event)"
+        />
+        <label for="image_url" class="active">Посилання на зображення</label>
+        <span
+          class="helper-text"
+          [attr.data-error]="image_url_error_message"
+        ></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-action right-align">
+    <button type="button" class="btn" (click)="submit_product()">
+      Зберегти
+    </button>
+  </div>
+</div>

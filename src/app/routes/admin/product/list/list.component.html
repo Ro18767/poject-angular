@@ -1,0 +1,60 @@
+<nav class="transparent black-text z-depth-0">
+  <div class="nav-wrapper">
+    <div class="col s12">
+      <a [routerLink]="['']" class="breadcrumb">
+        <i class="material-icons">home</i>
+      </a>
+      <a [routerLink]="['/admin']" class="breadcrumb">Admin</a>
+      <a [routerLink]="['/admin/product']" class="breadcrumb">Products</a>
+    </div>
+  </div>
+</nav>
+
+<h1 class="header center green-text">Product List</h1>
+
+<div class="center">
+  <a class="center btn green" [routerLink]="['/admin/product/add']"> Додати </a>
+</div>
+<div class="card">
+  <div class="card-tabs">
+    <table class="striped bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Edit</th>
+          <th>Icon</th>
+          <th>Name</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let produt of produts | keyvalue">
+          <td>
+            <b>{{ produt.key }}</b>
+          </td>
+          <td>
+            <a
+              class="btn-floating green"
+              [routerLink]="['/admin/product', produt.key]"
+            >
+              <i class="material-icons">edit</i>
+            </a>
+          </td>
+          <td><img [src]="produt.value.image_url" class="styled-img" /></td>
+          <td>
+            <span class="styled-title">{{ produt.value.title }}</span>
+          </td>
+          <td class="">
+            <button
+              class="btn-floating green"
+              (click)="handle_delete_click(produt.key)"
+            >
+              <i class="material-icons">delete</i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
