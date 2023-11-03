@@ -15,4 +15,7 @@ export class AuthService {
   set_is_admin() {
     sessionStorage.setItem('is_admin', 'true');
   }
+  set_is_not_admin() {
+    sessionStorage.removeItem('is_admin');
+  }
 }

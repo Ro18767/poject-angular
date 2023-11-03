@@ -26,14 +26,12 @@ export class AdminComponent {
   password_input!: ElementRef<HTMLInputElement>;
 
   constructor(private router: Router, private authService: AuthService) {
-    this.check_is_admin();
+    this.authService.set_is_not_admin();
   }
 
   check_is_admin() {
     if (this.authService.is_admin()) {
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/admin']);
-      });
+      this.router.navigate(['/admin/product']);
     }
   }
 

@@ -36,20 +36,18 @@ const routes: Routes = [
       },
       {
         path: 'admin/:any',
-        redirectTo: '/admin',
+        component: Error404Component,
       },
       {
         path: 'admin',
         component: AdminComponent,
-        canMatch: [notAdminGuard],
+        // canMatch: [notAdminGuard],
       },
       {
         path: 'admin',
         redirectTo: '/admin/product',
         canMatch: [adminGuard],
       },
-      
-  
 
       { path: '**', component: Error404Component },
     ],

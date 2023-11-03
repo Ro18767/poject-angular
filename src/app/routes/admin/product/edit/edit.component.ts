@@ -86,15 +86,33 @@ export class AdminProductEditComponent {
     let isAllValid = await this.validate_add_product_form();
     if (!isAllValid) return;
 
-    let insert_id = this.prodctsService.insert({
+    let prodct = {
       title: this.title,
       price: this.price,
       description: this.description,
       image_url: new URL(this.image_url),
-    });
-    this.prodctsService.save();
+    };
 
-    this.router.navigate(['/admin/product', insert_id]);
+    if (this.id == null) {
+      let insert_id = this.prodctsService.insert(prodct);
+      this.prodctsService.save();
+
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/admin/product', insert_id]);
+      });
+    } else {
+      let db_product = this.prodctsService.get(this.id);
+      if (db_product) {
+        Object.assign(db_product, prodct);
+        this.prodctsService.save();
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/admin/product', this.id]);
+        });
+      } else {
+        this.id = null;
+        this.submit_product();
+      }
+    }
   }
 
   async validate_add_product_form(): Promise<boolean> {
