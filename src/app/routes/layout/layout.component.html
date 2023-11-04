@@ -4,9 +4,22 @@
       <a [routerLink]="['']" class="brand-logo left">Logo</a>
       <ul id="nav-mobile" class="right">
         <li>
-          <a [routerLink]="['/cart']"
-            ><i class="material-icons">shopping_cart</i></a
-          >
+          <a [routerLink]="['/cart']" style="position: relative;">
+            <i class="material-icons">shopping_cart</i>
+            <h6 *ngIf="countincart>0" style="
+            position: absolute;
+            color: white;
+            background: #f53224;
+            right: 4px;
+            bottom: 6px;
+            border-radius: 25%;
+            padding: 3px;
+            font-size: 10px;
+            font-weight: bold;
+            ">
+              {{countincart>0?countincart:""}}
+            </h6>
+        </a>
         </li>
         <div *ngIf="is_admin(); then adminBlock; else notAdminBlock"></div>
         <ng-template #adminBlock>

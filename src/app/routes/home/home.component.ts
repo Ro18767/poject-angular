@@ -14,5 +14,6 @@ export class HomeComponent {
 
   add(id : number){
       this.cartService.add(id);
+      window.location.reload();
   }
 }

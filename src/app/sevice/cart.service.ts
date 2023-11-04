@@ -72,4 +72,12 @@ export class CartService {
   save() {
     window.localStorage.setItem(this.key, this.toJson());
   }
+
+  getcount() {
+    let x = 0;
+    for (let [key, value] of this.products()) 
+      x += value;
+    
+    return x;
+  }
 }

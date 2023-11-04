@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/sevice/auth.service';
+import { CartService } from 'src/app/sevice/cart.service';
 
 @Component({
   templateUrl: './layout.component.html',
@@ -7,5 +8,9 @@ import { AuthService } from 'src/app/sevice/auth.service';
 })
 export class LayoutComponent {
   is_admin = this.authService.get_is_admin_signal();
-  constructor(private authService: AuthService) {}
+  countincart : number;
+
+  constructor(private authService: AuthService, private CartService: CartService ) {
+    this.countincart = CartService.getcount();
+  }
 }

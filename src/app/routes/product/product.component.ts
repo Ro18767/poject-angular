@@ -35,5 +35,6 @@ export class ProductComponent {
 
   add(id : number){
     this.cartService.add(id);
+    window.location.reload();
   }
 }
