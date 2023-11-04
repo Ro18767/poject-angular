@@ -20,7 +20,7 @@
       </div>
       <div>
         <h4>{{ product.price | currency : "UAH" : "symbol-narrow" }}</h4>
-        <a class="product-buy waves-effect waves-light btn-large">
+        <a class="product-buy waves-effect waves-light btn-large" on-click="add(id)">
           Купить
           <i class="material-icons"> add_shopping_cart </i>
         </a>

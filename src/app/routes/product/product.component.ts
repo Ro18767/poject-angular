@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ProdctsService, Product } from 'src/app/sevice/prodcts.service';
+import { CartService }  from 'src/app/sevice/cart.service';
 
 @Component({
   templateUrl: './product.component.html',
@@ -12,7 +13,8 @@ export class ProductComponent {
   constructor(
     private prodctsService: ProdctsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private cartService: CartService 
   ) {
     this.id = 0;
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -29,5 +31,9 @@ export class ProductComponent {
         this.router.navigate(['']);
       }
     });
+  }
+
+  add(id : number){
+    this.cartService.add(id);
   }
 }

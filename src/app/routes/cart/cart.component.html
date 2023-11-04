@@ -7,55 +7,28 @@
           <th>Name</th>
           <th colspan="3">Count</th>
           <th>Price</th>
+          <th></th>
       </tr>
     </thead>
 
-    <tbody>
-         
-        <tr>
-            <td><img src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg" height="100px"></td>
-            <td>Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)</td>
-            <td><a class="waves-effect waves-light btn-small green right"><i class="material-icons">chevron_left</i></a></td>
-                
-            <td [width]="75">
-                <div class="input-field">
-                    <input id="input_text" type="text" data-length="3">
-                </div>
-            </td>
-
-            <td><a class="waves-effect waves-light btn-small green"><i class="material-icons">chevron_right</i></a></td>
-            <td>45 499</td>
-        </tr>
+    <tbody *ngFor="let produt of cart | keyvalue">
 
         <tr>
-            <td><img src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg" height="100px"></td>
-            <td>Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)</td>
-            <td><a class="waves-effect waves-light btn-small green right"><i class="material-icons">chevron_left</i></a></td>
-                
+            <td><a [routerLink]="['/product', produt.key]"><img [src]="produt.value[0].image_url" height="100px"></a></td>
+            <td><a [routerLink]="['/product', produt.key]">{{ produt.value[0].title }}</a></td>
+
+            <td><a class="waves-effect waves-light btn-small green right" (click)="valueminus(produt.key)"><i class="material-icons">chevron_left</i></a></td>    
             <td [width]="75">
                 <div class="input-field">
-                    <input id="input_text" type="text" data-length="3">
+                    <input id="text" value="{{produt.value[1]}}" (change)="valuechange(produt.key, $event)" type="text" data-length="4">
                 </div>
             </td>
+            <td><a class="waves-effect waves-light btn-small green" (click)="valueplus(produt.key)"><i class="material-icons">chevron_right</i></a></td>
 
-            <td><a class="waves-effect waves-light btn-small green"><i class="material-icons">chevron_right</i></a></td>
-            <td>45 499</td>
+            <td>{{ (produt.value[0].price * produt.value[1]) | currency : "UAH" : "symbol-narrow" }}</td>
+            
+            <td><a class="waves-effect waves-light btn-small green right" on-click="delete(produt.key)"><i class="material-icons">delete</i></a></td>
         </tr>
 
-        <tr>
-            <td><img src="https://content.rozetka.com.ua/goods/images/big/364623740.jpg" height="100px"></td>
-            <td>Мобільний телефон Apple iPhone 15 128GB Blue (MTP43RX/A)</td>
-            <td><a class="waves-effect waves-light btn-small green right"><i class="material-icons">chevron_left</i></a></td>
-                
-            <td [width]="75">
-                <div class="input-field">
-                    <input id="input_text" type="text" data-length="3">
-                </div>
-            </td>
-
-            <td><a class="waves-effect waves-light btn-small green"><i class="material-icons">chevron_right</i></a></td>
-            <td>45 499</td>
-        </tr>
-        
     </tbody>
   </table>
