@@ -27,8 +27,7 @@ export class CartComponent {
     });
   }
 
-  delete(id : number)
-  {
+  delete(id : number){
     this.cartService.delete(id);
     window.location.reload();
   }
@@ -72,5 +71,10 @@ export class CartComponent {
       this.cartService.edit_count(id, count);
       window.location.reload();
     }
+  }
+  
+  buy(){
+    this.cartService.deleteAll();
+    window.location.reload();
   }
 }

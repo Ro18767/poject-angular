@@ -1,34 +1,38 @@
 
 <h1 class="header center green-text">CART</h1>
 <table class="striped bordered">
-    <thead>
-      <tr>
-          <th>Icon</th>
-          <th>Name</th>
-          <th colspan="3">Count</th>
-          <th>Price</th>
-          <th></th>
-      </tr>
-    </thead>
+<thead>
+    <tr>
+        <th>Icon</th>
+        <th>Name</th>
+        <th colspan="3">Count</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+</thead>
 
-    <tbody *ngFor="let produt of cart | keyvalue">
+<tbody *ngFor="let produt of cart | keyvalue">
 
-        <tr>
-            <td><a [routerLink]="['/product', produt.key]"><img [src]="produt.value[0].image_url" height="100px"></a></td>
-            <td><a [routerLink]="['/product', produt.key]">{{ produt.value[0].title }}</a></td>
+    <tr>
+        <td><a [routerLink]="['/product', produt.key]"><img [src]="produt.value[0].image_url" height="100px"></a></td>
+        <td><a [routerLink]="['/product', produt.key]">{{ produt.value[0].title }}</a></td>
 
-            <td><a class="waves-effect waves-light btn-small green right" (click)="valueminus(produt.key)"><i class="material-icons">chevron_left</i></a></td>    
-            <td [width]="75">
-                <div class="input-field">
-                    <input id="text" value="{{produt.value[1]}}" (change)="valuechange(produt.key, $event)" type="text" data-length="4">
-                </div>
-            </td>
-            <td><a class="waves-effect waves-light btn-small green" (click)="valueplus(produt.key)"><i class="material-icons">chevron_right</i></a></td>
+        <td><a class="waves-effect waves-light btn-small green right" (click)="valueminus(produt.key)"><i class="material-icons">chevron_left</i></a></td>    
+        <td [width]="75">
+            <div class="input-field">
+                <input id="text" value="{{produt.value[1]}}" (change)="valuechange(produt.key, $event)" type="text" data-length="4">
+            </div>
+        </td>
+        <td><a class="waves-effect waves-light btn-small green" (click)="valueplus(produt.key)"><i class="material-icons">chevron_right</i></a></td>
 
-            <td>{{ (produt.value[0].price * produt.value[1]) | currency : "UAH" : "symbol-narrow" }}</td>
-            
-            <td><a class="waves-effect waves-light btn-small green right" on-click="delete(produt.key)"><i class="material-icons">delete</i></a></td>
-        </tr>
+        <td>{{ (produt.value[0].price * produt.value[1]) | currency : "UAH" : "symbol-narrow" }}</td>
+        
+        <td><a class="waves-effect waves-light btn-small green right" on-click="delete(produt.key)"><i class="material-icons">delete</i></a></td>
+    </tr>
 
-    </tbody>
-  </table>
+</tbody>
+</table>
+
+<div class="container center" style="margin-top: 50px;">
+    <a class="waves-effect waves-light btn red lighten-1" on-click="buy()"><i class="material-icons right">attach_money</i>Купить</a>
+</div>

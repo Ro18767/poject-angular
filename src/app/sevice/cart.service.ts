@@ -68,6 +68,11 @@ export class CartService {
     });
     this.save();
   }
+
+  deleteAll(){
+    this.products.set(new Map<number, number>());
+    this.save();
+  }
   
   save() {
     window.localStorage.setItem(this.key, this.toJson());
